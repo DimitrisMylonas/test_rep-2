@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v3
       with:
         python-version: '3.9'
 
@@ -32,7 +32,7 @@ jobs:
         jupyter nbconvert --to notebook --execute "MPL Classifier.ipynb" --output "MPL Classifier Output.ipynb"
 
     - name: Upload notebook output
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: trained-mlp-notebook
         path: MPL Classifier Output.ipynb
