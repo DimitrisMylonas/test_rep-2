@@ -29,7 +29,7 @@ jobs:
 
     - name: Run Jupyter Notebook
       run: |
-        jupyter nbconvert --to notebook --execute "C:\Users\dimit\Desktop\git practise 2\MPL Classifier.ipynb" --output "MPL Classifier Output.ipynb" --debug
+        jupyter nbconvert --to notebook --execute "MPL Classifier.ipynb" --output "MPL Classifier Output.ipynb" --debug
 
     - name: Upload notebook output
       uses: actions/upload-artifact@v4
