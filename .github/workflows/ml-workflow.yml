@@ -32,11 +32,11 @@ jobs:
 
     - name: Run Jupyter Notebook
       run: |
-        jupyter nbconvert --to notebook --execute "MPL CLassifier.ipynb" --output "MPL CLassifier Output.ipynb" --debug
+        jupyter nbconvert --to notebook --execute "MLP CLassifier.ipynb" --output "MLP CLassifier Output.ipynb" --debug
 
-    - name: Upload notebook output
+    - name: Upload notebook output 
       uses: actions/upload-artifact@v4
       with:
         name: trained-mlp-notebook
-        path: MPL CLassifier Output.ipynb
+        path: MLP CLassifier Output.ipynb
 
