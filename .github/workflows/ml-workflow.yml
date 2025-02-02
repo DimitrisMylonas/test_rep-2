@@ -1,4 +1,4 @@
-name: Train MPL Classifier
+name: Train MLP Classifier
 
 on:
   push:
@@ -34,9 +34,25 @@ jobs:
       run: |
         jupyter nbconvert --to notebook --execute "MLP CLassifier.ipynb" --output "MLP CLassifier Output.ipynb" --debug
 
-    - name: Upload notebook output 
+    - name: Check for model and metrics
+      run: ls -alh
+
+    - name: Upload notebook output
       uses: actions/upload-artifact@v4
       with:
         name: trained-mlp-notebook
         path: MLP CLassifier Output.ipynb
+
+    - name: Upload trained model
+      uses: actions/upload-artifact@v4
+      with:
+        name: trained-mlp-model
+        path: model.pkl  # Αν το αποθηκεύεις ως .h5, αλλάζεις σε model.h5
+
+    - name: Upload metrics CSV
+      uses: actions/upload-artifact@v4
+      with:
+        name: training-metrics
+        path: metrics.csv
+
 
